@@ -1,8 +1,9 @@
 WITH stg_listOfOrders AS (
     select
-        `order id`,
-        `order date`,
-        customerName,
+        `order id` as order_id,
+        `order date` as order_date,
+        FORMAT_DATE('%b-%y', `order date`) as month_year,
+        customerName as customer_name,
         state,
         city
     from
