@@ -30,9 +30,9 @@ select
     city,
     category,
     sub_category,
-    amount,
-    quantity,
-    profit,
+    SUM(amount) as amount,
+    SUM(quantity) as quantity,
+    SUM(profit) as profit,
     SUM(DISTINCT target) as target
 from e_commerce
 group by
@@ -43,7 +43,4 @@ group by
     state,
     city,
     category,
-    sub_category,
-    amount,
-    quantity,
-    profit
+    sub_category
