@@ -1,3 +1,5 @@
+{{config(materialized='table')}}
+
 WITH
     e_commerce AS (
         select
