@@ -1,5 +1,5 @@
 select
-    *
+    customer_name
 from
     {{ref("stg_listOfOrders")}}
 where
