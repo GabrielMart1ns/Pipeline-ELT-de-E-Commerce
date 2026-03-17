@@ -7,7 +7,7 @@ WITH
             SUM(quantity) AS products_ordered,
             TRUNC(SUM(profit), 2) AS profit
         FROM
-            `portfolio-101-417118.portfolio.int_ecommerce`
+            {{ ref("int_ecommerce")}}
         GROUP BY
             1
     ),
