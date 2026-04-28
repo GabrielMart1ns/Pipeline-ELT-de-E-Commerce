@@ -1,14 +1,10 @@
-WITH stg_salesTarget AS (
-    select
-        `Month of Order Date` AS month_orderDate,
-        Category as category,
-        Target AS target
-    from
-        {{source("ecommerce", 'sales_target_raw')}}
-)
-select
-    month_orderDate,
-    category,
-    target
-from
-    stg_salesTarget
+with
+    stg_salestarget as (
+        select
+            `Month of Order Date` as month_orderdate,
+            category as category,
+            target as target
+        from {{ source("ecommerce", "sales_target_raw") }}
+    )
+select month_orderdate, category, target
+from stg_salestarget
