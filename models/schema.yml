@@ -1,0 +1,17 @@
+
+version: 2
+
+sources:
+  - name: ecommerce
+    description: Dataset com tabelas de E-Commerce
+    database: portfolio-101-417118
+    schema: portfolio
+    tables:
+      - name: list_of_orders_raw
+        description: Tabela com informações de compra
+
+      - name: order_details_raw
+        description: Tabela com detalhamento das compras
+
+      - name: sales_target_raw
+        description: Tabela que contém os valores-meta para cada categoria de produto
